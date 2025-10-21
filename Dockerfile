@@ -1,15 +1,12 @@
-# Use an official Node.js runtime
 FROM node:18-alpine
 
-# Create app directory
 WORKDIR /usr/src/app
 
-# Copy files
-COPY package*.json ./
-COPY app.js .
+COPY app/package*.json ./
+RUN npm install
 
-# Expose port 3000
+COPY app/. .
+
 EXPOSE 3000
+CMD ["npm", "start"]
 
-# Command to run app
-CMD ["node", "app.js"]
