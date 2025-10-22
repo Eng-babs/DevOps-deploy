@@ -51,3 +51,5 @@ Run:
 **Eng-babs**  
 DevOps Intern — HNG 2025
 
+## 🌍 Live App
+http://54.234.217.254
