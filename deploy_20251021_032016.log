@@ -1,359 +1,0 @@
-
-==========================================
- 🚀 Starting Automated Deployment Script
-==========================================
-
-Enter your Git repository URL: Enter your Personal Access Token (leave blank if public): Enter branch name (default: main): Enter remote server username: Enter remote server IP address: Enter SSH private key path (e.g., ~/.ssh/key.pem): Enter application internal port (e.g., 3000): 
-✅ Parameters collected successfully.
--------------------------------------------
-Repository: https://github.com/Eng-babs/DevOps-deploy.git
-Branch: main
-Server: ubuntu@3.88.156.135
-App Port: 3000
--------------------------------------------
-
-📦 Cloning or updating the repository...
-Repository already exists locally. Pulling latest changes...
-From https://github.com/Eng-babs/DevOps-deploy
- * branch            main       -> FETCH_HEAD
-Your branch is up to date with 'origin/main'.
-Already on 'main'
-From https://github.com/Eng-babs/DevOps-deploy
- * branch            main       -> FETCH_HEAD
-Already up to date.
-✅ Repository ready in /c/Users/core i5/DevOps-deploy/DevOps-deploy
-✅ Docker configuration found.
-
-🔐 Testing SSH connection to remote server...
-✅ SSH connection successful on DESKTOP-HPDACPJ
-✅ Remote server reachable and SSH working.
-
-⚙️ Setting up the remote environment...
-
-======================================
- 🧩 Preparing Remote Server Environment
-======================================
-🔄 Updating system packages...
-Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
-Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
-Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
-Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
-Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.6 kB]
-Get:6 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.2 kB]
-Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [19.3 kB]
-Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
-Get:9 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 c-n-f Metadata [500 B]
-Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
-Get:11 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 c-n-f Metadata [384 B]
-Fetched 221 kB in 1s (259 kB/s)
-Reading package lists...
-📦 Installing Docker, Docker Compose, and Nginx (if missing)...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-ca-certificates is already the newest version (20240203).
-ca-certificates set to manually installed.
-curl is already the newest version (8.5.0-2ubuntu10.6).
-gnupg is already the newest version (2.4.4-2ubuntu17.3).
-gnupg set to manually installed.
-lsb-release is already the newest version (12.0-2).
-lsb-release set to manually installed.
-0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
-🐳 Installing Docker...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  bridge-utils containerd dns-root-data dnsmasq-base pigz runc ubuntu-fan
-Suggested packages:
-  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-buildx
-  docker-compose-v2 docker-doc rinse zfs-fuse | zfsutils
-The following NEW packages will be installed:
-  bridge-utils containerd dns-root-data dnsmasq-base docker.io pigz runc
-  ubuntu-fan
-0 upgraded, 8 newly installed, 0 to remove and 1 not upgraded.
-Need to get 75.9 MB of archives.
-After this operation, 288 MB of additional disk space will be used.
-Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
-Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
-Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 runc amd64 1.3.0-0ubuntu2~24.04.1 [8743 kB]
-Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 containerd amd64 1.7.28-0ubuntu1~24.04.1 [38.4 MB]
-Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 dns-root-data all 2024071801~ubuntu0.24.04.1 [5918 B]
-Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 dnsmasq-base amd64 2.90-2ubuntu0.1 [376 kB]
-Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker.io amd64 28.2.2-0ubuntu1~24.04.1 [28.3 MB]
-Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 ubuntu-fan all 0.12.16+24.04.1 [34.2 kB]
-Fetched 75.9 MB in 3s (23.8 MB/s)
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-dpkg-preconfigure: unable to re-open stdin: 
-Selecting previously unselected package pigz.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 103380 files and directories currently installed.)
-Preparing to unpack .../0-pigz_2.8-1_amd64.deb ...
-Unpacking pigz (2.8-1) ...
-Selecting previously unselected package bridge-utils.
-Preparing to unpack .../1-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
-Unpacking bridge-utils (1.7.1-1ubuntu2) ...
-Selecting previously unselected package runc.
-Preparing to unpack .../2-runc_1.3.0-0ubuntu2~24.04.1_amd64.deb ...
-Unpacking runc (1.3.0-0ubuntu2~24.04.1) ...
-Selecting previously unselected package containerd.
-Preparing to unpack .../3-containerd_1.7.28-0ubuntu1~24.04.1_amd64.deb ...
-Unpacking containerd (1.7.28-0ubuntu1~24.04.1) ...
-Selecting previously unselected package dns-root-data.
-Preparing to unpack .../4-dns-root-data_2024071801~ubuntu0.24.04.1_all.deb ...
-Unpacking dns-root-data (2024071801~ubuntu0.24.04.1) ...
-Selecting previously unselected package dnsmasq-base.
-Preparing to unpack .../5-dnsmasq-base_2.90-2ubuntu0.1_amd64.deb ...
-Unpacking dnsmasq-base (2.90-2ubuntu0.1) ...
-Selecting previously unselected package docker.io.
-Preparing to unpack .../6-docker.io_28.2.2-0ubuntu1~24.04.1_amd64.deb ...
-Unpacking docker.io (28.2.2-0ubuntu1~24.04.1) ...
-Selecting previously unselected package ubuntu-fan.
-Preparing to unpack .../7-ubuntu-fan_0.12.16+24.04.1_all.deb ...
-Unpacking ubuntu-fan (0.12.16+24.04.1) ...
-Setting up dnsmasq-base (2.90-2ubuntu0.1) ...
-Setting up runc (1.3.0-0ubuntu2~24.04.1) ...
-Setting up dns-root-data (2024071801~ubuntu0.24.04.1) ...
-Setting up bridge-utils (1.7.1-1ubuntu2) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-Setting up pigz (2.8-1) ...
-Setting up containerd (1.7.28-0ubuntu1~24.04.1) ...
-Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
-Setting up ubuntu-fan (0.12.16+24.04.1) ...
-Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /usr/lib/systemd/system/ubuntu-fan.service.
-Setting up docker.io (28.2.2-0ubuntu1~24.04.1) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-info: Selecting GID from range 100 to 999 ...
-info: Adding group `docker' (GID 113) ...
-Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
-Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
-Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
-Processing triggers for man-db (2.12.0-4build2) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-
-Restarting services...
-
-Service restarts being deferred:
- /etc/needrestart/restart.d/dbus.service
- systemctl restart getty@tty1.service
- systemctl restart networkd-dispatcher.service
- systemctl restart serial-getty@ttyS0.service
- systemctl restart systemd-logind.service
- systemctl restart unattended-upgrades.service
-
-No containers need to be restarted.
-
-No user sessions are running outdated binaries.
-
-No VM guests are running outdated hypervisor (qemu) binaries on this host.
-Pending kernel upgrade
-----------------------
-
-Newer kernel available
-
-The currently running kernel version is 6.14.0-1011-aws which is not the 
-expected kernel version 6.14.0-1014-aws.
-
-Restarting the system to load the new kernel will not be handled automatically, 
-so you should consider rebooting.
-
-⚙️ Installing Docker Compose...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  python3-compose python3-docker python3-dockerpty python3-docopt
-  python3-dotenv python3-texttable python3-websocket
-The following NEW packages will be installed:
-  docker-compose python3-compose python3-docker python3-dockerpty
-  python3-docopt python3-dotenv python3-texttable python3-websocket
-0 upgraded, 8 newly installed, 0 to remove and 1 not upgraded.
-Need to get 297 kB of archives.
-After this operation, 1589 kB of additional disk space will be used.
-Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 python3-websocket all 1.7.0-1 [38.1 kB]
-Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-docker all 5.0.3-1ubuntu1.1 [89.1 kB]
-Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 python3-dockerpty all 0.4.1-5 [11.4 kB]
-Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 python3-docopt all 0.6.2-6 [26.1 kB]
-Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 python3-dotenv all 1.0.1-1 [22.3 kB]
-Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 python3-texttable all 1.6.7-1 [11.0 kB]
-Get:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 python3-compose all 1.29.2-6ubuntu1 [84.6 kB]
-Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble/universe amd64 docker-compose all 1.29.2-6ubuntu1 [14.0 kB]
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-dpkg-preconfigure: unable to re-open stdin: 
-Fetched 297 kB in 0s (9600 kB/s)
-Selecting previously unselected package python3-websocket.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 103747 files and directories currently installed.)
-Preparing to unpack .../0-python3-websocket_1.7.0-1_all.deb ...
-Unpacking python3-websocket (1.7.0-1) ...
-Selecting previously unselected package python3-docker.
-Preparing to unpack .../1-python3-docker_5.0.3-1ubuntu1.1_all.deb ...
-Unpacking python3-docker (5.0.3-1ubuntu1.1) ...
-Selecting previously unselected package python3-dockerpty.
-Preparing to unpack .../2-python3-dockerpty_0.4.1-5_all.deb ...
-Unpacking python3-dockerpty (0.4.1-5) ...
-Selecting previously unselected package python3-docopt.
-Preparing to unpack .../3-python3-docopt_0.6.2-6_all.deb ...
-Unpacking python3-docopt (0.6.2-6) ...
-Selecting previously unselected package python3-dotenv.
-Preparing to unpack .../4-python3-dotenv_1.0.1-1_all.deb ...
-Unpacking python3-dotenv (1.0.1-1) ...
-Selecting previously unselected package python3-texttable.
-Preparing to unpack .../5-python3-texttable_1.6.7-1_all.deb ...
-Unpacking python3-texttable (1.6.7-1) ...
-Selecting previously unselected package python3-compose.
-Preparing to unpack .../6-python3-compose_1.29.2-6ubuntu1_all.deb ...
-Unpacking python3-compose (1.29.2-6ubuntu1) ...
-Selecting previously unselected package docker-compose.
-Preparing to unpack .../7-docker-compose_1.29.2-6ubuntu1_all.deb ...
-Unpacking docker-compose (1.29.2-6ubuntu1) ...
-Setting up python3-dotenv (1.0.1-1) ...
-Setting up python3-texttable (1.6.7-1) ...
-Setting up python3-docopt (0.6.2-6) ...
-Setting up python3-websocket (1.7.0-1) ...
-Setting up python3-dockerpty (0.4.1-5) ...
-Setting up python3-docker (5.0.3-1ubuntu1.1) ...
-Setting up python3-compose (1.29.2-6ubuntu1) ...
-Setting up docker-compose (1.29.2-6ubuntu1) ...
-Processing triggers for man-db (2.12.0-4build2) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-
-Restarting services...
-
-Service restarts being deferred:
- /etc/needrestart/restart.d/dbus.service
- systemctl restart getty@tty1.service
- systemctl restart networkd-dispatcher.service
- systemctl restart serial-getty@ttyS0.service
- systemctl restart systemd-logind.service
- systemctl restart unattended-upgrades.service
-
-No containers need to be restarted.
-
-No user sessions are running outdated binaries.
-
-No VM guests are running outdated hypervisor (qemu) binaries on this host.
-Pending kernel upgrade
-----------------------
-
-Newer kernel available
-
-The currently running kernel version is 6.14.0-1011-aws which is not the 
-expected kernel version 6.14.0-1014-aws.
-
-Restarting the system to load the new kernel will not be handled automatically, 
-so you should consider rebooting.
-
-🌐 Installing Nginx...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following additional packages will be installed:
-  nginx-common
-Suggested packages:
-  fcgiwrap nginx-doc ssl-cert
-The following NEW packages will be installed:
-  nginx nginx-common
-0 upgraded, 2 newly installed, 0 to remove and 1 not upgraded.
-Need to get 564 kB of archives.
-After this operation, 1596 kB of additional disk space will be used.
-Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx-common all 1.24.0-2ubuntu7.5 [43.4 kB]
-Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates/main amd64 nginx amd64 1.24.0-2ubuntu7.5 [520 kB]
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-dpkg-preconfigure: unable to re-open stdin: 
-Fetched 564 kB in 0s (25.6 MB/s)
-Selecting previously unselected package nginx-common.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 104008 files and directories currently installed.)
-Preparing to unpack .../nginx-common_1.24.0-2ubuntu7.5_all.deb ...
-Unpacking nginx-common (1.24.0-2ubuntu7.5) ...
-Selecting previously unselected package nginx.
-Preparing to unpack .../nginx_1.24.0-2ubuntu7.5_amd64.deb ...
-Unpacking nginx (1.24.0-2ubuntu7.5) ...
-Setting up nginx-common (1.24.0-2ubuntu7.5) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /usr/lib/systemd/system/nginx.service.
-Setting up nginx (1.24.0-2ubuntu7.5) ...
- * Upgrading binary nginx
-   ...done.
-Processing triggers for man-db (2.12.0-4build2) ...
-Processing triggers for ufw (0.36.2-6) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (This frontend requires a controlling tty.)
-debconf: falling back to frontend: Teletype
-
-Restarting services...
-
-Service restarts being deferred:
- /etc/needrestart/restart.d/dbus.service
- systemctl restart getty@tty1.service
- systemctl restart networkd-dispatcher.service
-Pending kernel upgrade
-----------------------
-
-Newer kernel available
-
-The currently running kernel version is 6.14.0-1011-aws which is not the 
-expected kernel version 6.14.0-1014-aws.
-
-Restarting the system to load the new kernel will not be handled automatically, 
-so you should consider rebooting.
-
- systemctl restart serial-getty@ttyS0.service
- systemctl restart systemd-logind.service
- systemctl restart unattended-upgrades.service
-
-No containers need to be restarted.
-
-No user sessions are running outdated binaries.
-
-No VM guests are running outdated hypervisor (qemu) binaries on this host.
-Synchronizing state of nginx.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
-Executing: /usr/lib/systemd/systemd-sysv-install enable nginx
-👥 Adding user to Docker group...
-
-✅ Versions installed:
-Docker version 28.2.2, build 28.2.2-0ubuntu1~24.04.1
-docker-compose version 1.29.2, build unknown
-✅ Remote server setup complete!
-nginx version: nginx/1.24.0 (Ubuntu)
