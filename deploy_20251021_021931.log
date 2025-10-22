@@ -1,0 +1,18 @@
+
+==========================================
+ 🚀 Starting Automated Deployment Script
+==========================================
+
+Enter your Git repository URL: Enter your Personal Access Token (leave blank if public): Enter branch name (default: main): Enter remote server username: Enter remote server IP address: Enter SSH private key path (e.g., ~/.ssh/key.pem): Enter application internal port (e.g., 3000): 
+✅ Parameters collected successfully.
+-------------------------------------------
+Repository: [A[Bhttps://github.com/Eng-babs/DevOps-deploy.git
+Branch: main
+Server: devops_instance1@3.88.156.135
+App Port: 3000
+-------------------------------------------
+
+📦 Cloning or updating the repository...
+Cloning repository from [A[Bhttps://github.com/Eng-babs/DevOps-deploy.git ...
+Cloning into 'DevOps-deploy'...
+fatal: protocol '?[A?[Bhttps' is not supported

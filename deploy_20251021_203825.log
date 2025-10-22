@@ -1,0 +1,72 @@
+
+==========================================
+ 🚀 Starting Automated Deployment Script
+==========================================
+
+Enter your Git repository URL: Enter your Personal Access Token (leave blank if public): Enter branch name (default: main): Enter remote server username: Enter remote server IP address: Enter SSH private key path (e.g., ~/.ssh/key.pem): Enter application internal port (e.g., 3000): 
+✅ Parameters collected successfully.
+-------------------------------------------
+Repository: https://github.com/Eng-babs/DevOps-deploy.git
+Branch: main
+Server: ubuntu@54.234.217.254
+App Port: 3000
+-------------------------------------------
+
+📦 Cloning or updating the repository...
+Repository already exists locally. Pulling latest changes...
+From https://github.com/Eng-babs/DevOps-deploy
+ * branch            main       -> FETCH_HEAD
+Your branch is up to date with 'origin/main'.
+Already on 'main'
+From https://github.com/Eng-babs/DevOps-deploy
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+✅ Repository ready in /c/Users/core i5/DevOps-deploy/DevOps-deploy
+✅ Docker configuration found.
+
+🔐 Testing SSH connection to remote server...
+✅ SSH connection successful on DESKTOP-HPDACPJ
+✅ Remote server reachable and SSH working.
+
+⚙️ Setting up the remote environment...
+
+======================================
+ 🧩 Preparing Remote Server Environment
+======================================
+🔄 Updating system packages...
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu noble-backports InRelease
+Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:5 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1223 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [904 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+Get:9 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+Fetched 2327 kB in 1s (1667 kB/s)
+Reading package lists...
+📦 Installing Docker, Docker Compose, and Nginx (if missing)...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ca-certificates is already the newest version (20240203).
+curl is already the newest version (8.5.0-2ubuntu10.6).
+gnupg is already the newest version (2.4.4-2ubuntu17.3).
+lsb-release is already the newest version (12.0-2).
+0 upgraded, 0 newly installed, 0 to remove and 5 not upgraded.
+✅ Docker already installed.
+✅ Docker Compose already installed.
+✅ Nginx already installed.
+
+✅ Versions installed:
+Docker version 28.2.2, build 28.2.2-0ubuntu1~24.04.1
+docker-compose version 1.29.2, build unknown
+✅ Remote server setup complete!
+nginx version: nginx/1.24.0 (Ubuntu)
+
+🚀 Deploying Dockerized application on remote server...
+📤 Copying project files to remote server...
+dup() in/out/err failed
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: error in rsync protocol data stream (code 12) at io.c(232) [sender=3.4.1]

@@ -1,0 +1,31 @@
+
+==========================================
+ 🚀 Starting Automated Deployment Script
+==========================================
+
+Enter your Git repository URL: Enter your Personal Access Token (leave blank if public): Enter branch name (default: main): Enter remote server username: Enter remote server IP address: Enter SSH private key path (e.g., ~/.ssh/key.pem): Enter application internal port (e.g., 3000): 
+✅ Parameters collected successfully.
+-------------------------------------------
+Repository: https://github.com/Eng-babs/DevOps-deploy.git
+Branch: main
+Server: devops_instance1@3.88.156.135
+App Port: 3000
+-------------------------------------------
+
+📦 Cloning or updating the repository...
+Repository already exists locally. Pulling latest changes...
+From https://github.com/Eng-babs/DevOps-deploy
+ * branch            main       -> FETCH_HEAD
+   e6ef530..ead4530  main       -> origin/main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Already on 'main'
+From https://github.com/Eng-babs/DevOps-deploy
+ * branch            main       -> FETCH_HEAD
+Updating e6ef530..ead4530
+Fast-forward
+ Dockerfile | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 Dockerfile
+✅ Repository ready in /c/Users/core i5/DevOps-deploy/DevOps-deploy
+✅ Docker configuration found.

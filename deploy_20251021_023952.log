@@ -1,0 +1,28 @@
+
+==========================================
+ 🚀 Starting Automated Deployment Script
+==========================================
+
+Enter your Git repository URL: Enter your Personal Access Token (leave blank if public): Enter branch name (default: main): Enter remote server username: Enter remote server IP address: Enter SSH private key path (e.g., ~/.ssh/key.pem): Enter application internal port (e.g., 3000): 
+✅ Parameters collected successfully.
+-------------------------------------------
+Repository: https://github.com/Eng-babs/DevOps-deploy.git
+Branch: main
+Server: devops_instance1@3.88.156.135
+App Port: 3000
+-------------------------------------------
+
+📦 Cloning or updating the repository...
+Repository already exists locally. Pulling latest changes...
+From https://github.com/Eng-babs/DevOps-deploy
+ * branch            main       -> FETCH_HEAD
+Your branch is up to date with 'origin/main'.
+Already on 'main'
+From https://github.com/Eng-babs/DevOps-deploy
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+✅ Repository ready in /c/Users/core i5/DevOps-deploy/DevOps-deploy
+✅ Docker configuration found.
+
+🔐 Testing SSH connection to remote server...
+❌ SSH key not found at: Downloads
