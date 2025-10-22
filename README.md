@@ -42,6 +42,11 @@ This repo contains a simple Node.js app located in the app/ folder, which runs i
 
 ---
 
+## 🧹 Optional Cleanup
+Run:
+```bash
+./deploy.sh --cleanup
+
 ## 👨‍💻 Author
 **Eng-babs**  
 DevOps Intern — HNG 2025

@@ -155,5 +155,29 @@ echo "🌍 Access your app at: http://$SERVER_IP"
 echo "==========================================="
 
 
+# --- Step 10: Cleanup flag ---
+if [[ "$1" == "--cleanup" ]]; then
+  echo "🧹 Cleaning up deployed resources..."
+  ssh -i "$SSH_KEY" -o StrictHostKeyChecking=no "$SSH_USER@$SERVER_IP" << EOF
+    set -e
+    echo "🧽 Stopping and removing containers..."
+    sudo docker stop app_deploy || true
+    sudo docker rm app_deploy || true
 
+    echo "🗑 Removing deployment directory and NGINX config..."
+    sudo rm -rf ~/app_deploy
+    sudo rm -f /etc/nginx/sites-enabled/app.conf
+
+    echo "🔁 Reloading NGINX..."
+    sudo systemctl reload nginx
+  EOF
+
+  echo "✅ Cleanup complete!"
+  exit 0
+fi
+
+
+
+
+---
 

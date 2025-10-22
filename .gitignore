@@ -1,0 +1,13 @@
+# Ignore log files
+deploy_*.log
+
+# Ignore node modules
+node_modules/
+
+# Ignore Docker artifacts
+*.tar
+*.img
+
+# Ignore temporary or system files
+*.swp
+.DS_Store
